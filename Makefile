@@ -9,7 +9,7 @@ TESTS = $(wildcard test/sql/*.sql)
 REGRESS = $(patsubst test/sql/%.sql,%,$(TESTS))
 REGRESS_OPTS = --inputdir=test --load-extension=vector
 
-OPTFLAGS = -march=native
+OPTFLAGS = -march=x86-64
 
 # Mac ARM doesn't support -march=native
 ifeq ($(shell uname -s), Darwin)
